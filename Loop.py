@@ -1,52 +1,21 @@
-#range(start,stop,step) 
-'''
-for i in range(0,12,3):
-	print(i)
+#Functions
 
-print('')
+f = lambda x,y: x+y			#Lambda is a nameless function, 
+							#where x,y are parameters, and then code to be executed (x+y)
 
-string = "String Traversal"
-for i in range(len(string)):
-	print(string[i])
-print('')
-
-for char in string: 
-	print(char)
-
-print('')
-
-for i in range(3):
-	for j in range(2):
-		print(j)
-
-print('')
-'''
-
-'''
-# Print 10x10 Multiplication Table
-for i in range(1,11):
-	print('{:<3}|' .format(i), end="")
-
-	for j in range(1,11):
-		print('{:>4}' .format(i*j), end="")
-	if i == 1:
-		print(''.format(""), end="")
-	print("")
+d = lambda a: lambda b: lambda c: a*b*c		#Variable with nested functions (lambda operator = nameless function)
+											#Parameters a,b, and c. With respective lambda function. 
+												
+e = lambda c: lambda a,b: lambda d: (c*(a+b))%d 		#Parameter c with first lamda function
+														#Parameter a, b with second lamda function
+														#Paramter d with final function 
 
 
-condition = 10 
-while condition != 0:
-	print(condition)
-	condition = condition -1
+print(f(2,3))								#Call variable f which call function lamda
+											#that has to parameters x,y 
 
+print(d(5)(2)(3))							#Call variable f which call function lamda
+											#that has to parameters a,b, and c.
 
-while True:
-	print("Infinite")
-	break
-
-'''
-def Numbers():
-	for i in range(1,11):
-		if i == 5: 
-			continue
-		print(i)
+print(e(2)(4,3)(11))							#Parameters are separated by parantheses for each function
+										 	#not per parameter, per function. 
